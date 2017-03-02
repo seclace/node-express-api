@@ -44,9 +44,9 @@ router.get('/', function ( req, res ) {
     // .set({
     //   values: 'input@value'
     // })
-    .find(getTrIds())
+    .find('#s1 input')
     .set({
-      values: ['@value']
+      values: '@value'
     })
     .data(function ( data ) {
       console.log('Here is data callback!');
