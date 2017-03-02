@@ -44,7 +44,7 @@ router.get('/', function ( req, res ) {
     // .set({
     //   values: 'input@value'
     // })
-    .find('#s1 input')
+    .find('input')
     .set({
       values: '@value'
     })
@@ -55,7 +55,7 @@ router.get('/', function ( req, res ) {
     })
     .done(function () {
       console.log('Successfully done!');
-      res.send('done! ' + q);
+      res.send('done! ' + JSON.parse(q));
     })
     .log(console.log)
     .error(console.log);
