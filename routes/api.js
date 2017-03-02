@@ -29,7 +29,7 @@ router.get('/', function ( req, res, next ) {
       if ( response.status >= 400 ) {
         throw new Error("Bad response from server");
       }
-      return response.json();
+      return response;
     })
     .catch(function ( error ) {
       return error;
