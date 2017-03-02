@@ -29,13 +29,13 @@ router.get('/', function ( req, res, next ) {
       if ( response.status >= 400 ) {
         throw new Error("Bad response from server");
       }
-      return response.text();
+      return response.text().then(function ( text ) {
+        res.send(text);
+      });
     })
     .catch(function ( error ) {
-      return error;
+      res.send(error);
     });
-
-  res.send(data);
 });
 
 module.exports = router;
