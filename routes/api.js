@@ -1,11 +1,27 @@
 var express = require('express');
 var router = express.Router();
 
-var olimpUrl = 'https://www.olimp.kz/ajax_index.php?page=line&line_nums=1&action=2&mid=0&id=0';
+var headers = {
+  'X-Requested-With': 'XMLHttpRequest'
+};
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  var data = fetch(olimpUrl)
+var params = {
+  method: 'POST',
+  headers: headers
+};
+
+var olimpUrl = 'https://www.olimp.kz/ajax_index.php?page=line&line_nums=1&action=2&mid=0&id=0&live[]=30101479&live[]=30086206';
+
+var url = 'https://nl.1xbet.com/LiveFeed/Get1x2_Zip?' +
+  'count=50&' +
+  'tf=1440&' +
+  'afterDays=2&' +
+  'mode=4&' +
+  'subGames=107577107&' +
+  'country=1';
+
+router.get('/', function ( req, res, next ) {
+  var data = fetch(olimpUrl, params)
     .then(function ( response ) {
       if ( response.status >= 400 ) {
         throw new Error("Bad response from server");
@@ -13,7 +29,7 @@ router.get('/', function(req, res, next) {
       return response.json();
     })
     .catch(function ( error ) {
-      console.log(error);
+      return error;
     });
 
   res.send(data);
