@@ -44,7 +44,7 @@ router.get('/', function ( req, res ) {
     // .set({
     //   values: 'input@value'
     // })
-    .find(olimpInputs)
+    .find(getTrIds())
     .set({
       values: ['@value']
     })
@@ -85,7 +85,7 @@ function getTrIds( count ) {
   if ( !count ) count = 100;
   var result = "";
   for ( var i = 1; i < count; i++ ) {
-    result += "#s" + i;
+    result += "#s" + i + " input";
     if (i !== count - 1) result += ", ";
   }
   return result;
