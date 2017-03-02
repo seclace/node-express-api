@@ -19,6 +19,7 @@ var olimpUrl = 'https://www.olimp.kz/ajax_index.php?page=line&line_nums=1&action
 var olimpBettingUrl = 'https://www.olimp.kz/betting';
 var olimpBettingButtonCheckAll = 'input[value="Выделить все"]';
 var olimpCheckboxes = getTrIds();
+var olimpInputs = 'input[name="live[]"]';
 
 var url = 'https://nl.1xbet.com/LiveFeed/Get1x2_Zip?' +
   'count=50&' +
@@ -42,6 +43,10 @@ router.get('/', function ( req, res ) {
     // })
     .set({
       values: 'input@value'
+    })
+    .find(olimpInputs)
+    .set({
+      values: ['@value']
     })
     .data(function ( data ) {
       q = data;
