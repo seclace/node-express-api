@@ -55,7 +55,7 @@ router.get('/', function ( req, res ) {
     })
     .done(function () {
       console.log('Successfully done!');
-      res.send('done! ' + JSON.parse(q));
+      res.send('done! ' + q);
     })
     .log(console.log)
     .error(console.log);
