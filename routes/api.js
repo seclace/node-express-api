@@ -44,7 +44,7 @@ router.get('/', function ( req, res ) {
     // .set({
     //   values: 'input@value'
     // })
-    .find('.smallwnd3 input')
+    .find('.smallwnd3')
     .set({
       values: '@value'
     })
