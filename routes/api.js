@@ -44,7 +44,7 @@ router.get('/', function ( req, res ) {
     // .set({
     //   values: 'input@value'
     // })
-    .find('input')
+    .find('.smallwnd3 input[type="checkbox"]')
     .set({
       values: '@value'
     })
