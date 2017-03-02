@@ -5,9 +5,12 @@ var headers = {
   'X-Requested-With': 'XMLHttpRequest'
 };
 
+var myHeaders = new Headers();
+myHeaders.set('X-Requested-With','XMLHttpRequest');
+
 var params = {
   method: 'POST',
-  headers: headers
+  headers: myHeaders
 };
 
 var olimpUrl = 'https://www.olimp.kz/ajax_index.php?page=line&line_nums=1&action=2&mid=0&id=0&live[]=30101479&live[]=30086206';
