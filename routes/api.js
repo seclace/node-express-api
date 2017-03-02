@@ -36,19 +36,20 @@ router.get('/', function ( req, res ) {
   var q = [];
   osmosis
     .get(olimpBettingUrl)
-    .find(olimpCheckboxes)
+    // .find(olimpCheckboxes)
     // .then(function ( window ) {
     //   var title = window.document.querySelectorAll('title');
     //   console.log(title);
     // })
-    .set({
-      values: 'input@value'
-    })
+    // .set({
+    //   values: 'input@value'
+    // })
     .find(olimpInputs)
     .set({
       values: ['@value']
     })
     .data(function ( data ) {
+      console.log('Here is data callback!');
       q = data;
       console.log(data);
     })
